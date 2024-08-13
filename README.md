@@ -1,65 +1,98 @@
-# Development challenge
+# **Sistema de Gerenciamento de Pacientes**
 
-![logo medcloud-03 white copy](https://user-images.githubusercontent.com/46347123/158176045-de9fefb0-35e2-4515-83ff-c132608aa870.png)
+Um sistema completo para gerenciar registros de pacientes, incluindo funcionalidades de cadastro, edição, remoção e visualização dos dados em tempo real. Este projeto é uma aplicação full-stack com um front-end React e um back-end Node.js com Express, conectados a um banco de dados PostgreSQL. A aplicação também está containerizada usando Docker.
 
-About Medcloud:
+## **Funcionalidades**
 
-We make exams and medical data management more flexible, secure and effective by accelerating the transition from clinics and hospitals to the cloud.
-The RIS and PACS systems have been practically the same for the past 25 years. Interoperability problems, high costs and a lack of understanding about the patient's access to his medical records.
+### **Front-End**
 
-These points defined limits for the doctor-patient relationship and barriers to radiology workflows. We are revolutionizing this through a Care Coordination based solution that improves workflows for providers and integrates doctors and patients for a better experience.
+- **Formulário de Registro de Pacientes**:
+  - Permite a inserção de novos pacientes com informações como nome, data de nascimento, email e endereço.
+  - Exibe mensagens de sucesso ao salvar um paciente e mensagens de erro em caso de falha.
+  - Atualiza a lista de pacientes em tempo real sem necessidade de recarregar a página.
 
-Since our foundation, almost 10 years ago, we have prioritized excellence in the management of health data, structuring workflows of health professionals, clinics, laboratories and hospitals for assertive and quality diagnostics.
+- **Lista de Pacientes**:
+  - Exibe a lista de pacientes em uma tabela paginada.
+  - Opções para editar e remover pacientes.
+  - Modal de edição para atualizar informações dos pacientes.
+  - Exibe mensagens de sucesso ao editar ou remover um paciente.
+  - Paginador para navegar entre as páginas da lista de pacientes.
 
-We understand that behind each medical record there is a patient seeking to improve his health and the hope of family members for his well being. After all, we are all patients, and Medcloud's mission is to help you live longer and better. #PatientFirst
+- **Navbar**:
+  - Componente de navegação com links para as páginas de registro e consulta de dados dos pacientes.
+  - Inclui a marca da empresa, campo de busca, e links para contato e sobre nós.
 
-Medcloud's challenge for Dev Full Stack.
+### **Back-End**
 
-## Goal
+- **API RESTful**:
+  - Endpoints para operações CRUD (Create, Read, Update, Delete) sobre pacientes.
+  - Endpoints:
+    - `POST /api/pacientes` - Adiciona um novo paciente.
+    - `GET /api/pacientes` - Recupera todos os pacientes.
+    - `PUT /api/pacientes/:id` - Atualiza um paciente existente.
+    - `DELETE /api/pacientes/:id` - Remove um paciente.
 
-- To develop a web application (CRUD) to manage patient registers (Patient's name, birth date, email and address).
+- **Banco de Dados**:
+  - Utiliza PostgreSQL para armazenar os dados dos pacientes.
+  - Modelagem de banco de dados para armazenar informações como nome, data de nascimento, email e endereço dos pacientes.
 
-## Required
+## **Tecnologias Usadas**
 
-- You need to develop both the front-end and the back-end.
-- In the front-end you MUST use React.
-- In the back-end you MUST use Node.js.
-- The patient data should not be static  (You MUST use a cloud database or a local database).
-- Field validation (date, required fields, etc).
+### **Front-End**:
+- **React**: Biblioteca JavaScript para construir interfaces de usuário.
+- **Material-UI (MUI)**: Biblioteca de componentes React para criar interfaces de usuário com estilos prontos e responsivos.
 
-## Extra Points
+### **Back-End**:
+- **Node.js**: Ambiente de execução JavaScript do lado do servidor.
+- **Express**: Framework para construir APIs RESTful com Node.js.
+- **PostgreSQL**: Sistema de gerenciamento de banco de dados relacional.
 
-- Cache the data in-browser.
-- Pagination.
-- Use Material UI - https://material-ui.com.
-- A cool design.
-- If you choose a local database: a docker environment of your project.
+### **Containerização**:
+- **Docker**: Utilizado para containerizar o projeto, garantindo consistência em ambientes de desenvolvimento e produção.
 
-## References
+## **Instalação e Configuração**
 
-- Intro to React: https://reactjs.org/tutorial/tutorial.html.
+### **Docker**
 
-## What will be evaluated:
+1. Certifique-se de que o Docker está instalado em seu sistema.
+2. Clone o repositório:
+   ```bash
+   git clone https://github.com/carlospaiva88/development-challenge-nine.git
+   cd development-challenge-nine
 
-- Clean and organized code (naming, etc.)
-- Knowledge of patterns (PSRs, design patterns, SOLID)
-- Be consistent and know how to argue your choices
-- Present solutions you master
-- Data Modeling
-- Code maintainability
-- Error handling
-- Architecture (structuring thought before writing)
-- Affection in decoupling components (other layers, service, repository)
+3. Construa e inicie os containers Docker:
+```bash
+docker-compose up --build
+```
+- Isso criará e iniciará os containers para o front-end, back-end e banco de dados PostgreSQL conforme definido no arquivo docker-compose.yml
 
-According to the above criteria, we will evaluate your test in order to proceed to the technical interview. If you have not acceptably achieved what we are proposing above, we will not proceed with the process.
+4. Configure o banco de dados PostgreSQL com as credenciais apropriadas de configuração (db.js).
 
-## Delivery
+## **Sem Docker**
 
-You MUST fork this repository to your own account and push you code to it. 
-When you finish it, you must send a email to cv@medcloud.com.br with your curriculum and your fork.
-
-Good luck! Any doubts, feel free to send an email to cv@medcloud.com.br.
-
-## For the day of the technical interview and code review
-
-On the date set by the recruiter, have your application running on your local machine to run the tests and to show us the points developed and possible questions. We will do a code review together with you as if you were already on our team, you will be able to explain what you thought, how you architected and how the project can evolve. Good luck!
+### Front-End
+1. Navegue até o diretório do front-end:
+```bash
+cd frontend.
+```
+2. Instale as dependências:
+```bash
+npm install.
+```
+3.Inicie o servidor de desenvolvimento:
+```bash
+npm start.
+```
+### Back-End
+1. Navegue até o diretório do back-end:
+```bash
+cd backend
+```
+3. Instale as dependências:
+```bash
+npm install
+```
+4. Inicie o servidor:
+```bash
+node server.js
+```
