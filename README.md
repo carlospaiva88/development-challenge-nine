@@ -18,10 +18,6 @@ Um sistema completo para gerenciar registros de pacientes, incluindo funcionalid
   - Exibe mensagens de sucesso ao editar ou remover um paciente.
   - Paginador para navegar entre as páginas da lista de pacientes.
 
-- **Navbar**:
-  - Componente de navegação com links para as páginas de registro e consulta de dados dos pacientes.
-  - Inclui a marca da empresa, campo de busca, e links para contato e sobre nós.
-
 ### **Back-End**
 
 - **API RESTful**:
