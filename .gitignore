@@ -1,0 +1,15 @@
+# Node.js
+node_modules/
+npm-debug.log
+
+# Docker
+.docker/
+docker-compose.override.yml
+
+# Ambiente de desenvolvimento
+.env
+*.log
+
+# IDEs
+.vscode/
+.idea/
